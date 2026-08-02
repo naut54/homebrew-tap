@@ -1,20 +1,20 @@
 class Fsapp < Formula
   desc "Operational CLI (fsapp) and config CLI (fset) for copy/mv/sync/watch/compress, backed by file-engine"
   homepage "https://github.com/naut54/fsapp"
-  version "0.2.0"
+  version "0.2.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/naut54/fsapp/releases/download/v0.2.0/fsapp-aarch64-apple-darwin.tar.xz"
-      sha256 "37a4eea4d4472b8a886e87a35c9e8a51652fba446e16aef32968564ac1ad40c5"
+      url "https://github.com/naut54/fsapp/releases/download/v0.2.1/fsapp-aarch64-apple-darwin.tar.xz"
+      sha256 "20b731ea597ffa32ff8d1f5f05b111a45a095b83388ff55f3ab31e860a750b45"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/naut54/fsapp/releases/download/v0.2.0/fsapp-x86_64-apple-darwin.tar.xz"
-      sha256 "092e9b2310f10afb736944f821645a7eac4cce71c62920ed1860f770f1f7bcc0"
+      url "https://github.com/naut54/fsapp/releases/download/v0.2.1/fsapp-x86_64-apple-darwin.tar.xz"
+      sha256 "7a1ba18019bf06e758b4c72f6be39096dc069f60b9af82f64198fd1eb5b12aca"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/naut54/fsapp/releases/download/v0.2.0/fsapp-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "0f11e46173b52cc1d91e0ae1ac824b53bfad4b15145982c3146048d7f71bbbf3"
+    url "https://github.com/naut54/fsapp/releases/download/v0.2.1/fsapp-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "0d2e6542aaa4e2d72a6e15641d80ed7ba517d2362e27175a68ad7b0988b05000"
   end
   license "MIT"
 
