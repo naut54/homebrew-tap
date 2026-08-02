@@ -1,20 +1,20 @@
 class Fsapp < Formula
-  desc "Operational CLI for copy/mv/sync/watch/compress, backed by file-engine"
+  desc "Operational CLI (fsapp) and config CLI (fset) for copy/mv/sync/watch/compress, backed by file-engine"
   homepage "https://github.com/naut54/fsapp"
-  version "0.1.1"
+  version "0.2.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/naut54/fsapp/releases/download/v0.1.1/fsapp-aarch64-apple-darwin.tar.xz"
-      sha256 "99695e38037038b6d3bdcdc459aefaf5d2c168f770adaf48a03918994d86589c"
+      url "https://github.com/naut54/fsapp/releases/download/v0.2.0/fsapp-aarch64-apple-darwin.tar.xz"
+      sha256 "37a4eea4d4472b8a886e87a35c9e8a51652fba446e16aef32968564ac1ad40c5"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/naut54/fsapp/releases/download/v0.1.1/fsapp-x86_64-apple-darwin.tar.xz"
-      sha256 "83364a9fcf0d307a4553979ecd69f3f8d1c05b9f820346351ffc1eca66966a8f"
+      url "https://github.com/naut54/fsapp/releases/download/v0.2.0/fsapp-x86_64-apple-darwin.tar.xz"
+      sha256 "092e9b2310f10afb736944f821645a7eac4cce71c62920ed1860f770f1f7bcc0"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/naut54/fsapp/releases/download/v0.1.1/fsapp-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "d067631e496e5ca13b5a2d2a493758fbe0abf2b77ca7456e5ae972e5e90e0130"
+    url "https://github.com/naut54/fsapp/releases/download/v0.2.0/fsapp-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "0f11e46173b52cc1d91e0ae1ac824b53bfad4b15145982c3146048d7f71bbbf3"
   end
   license "MIT"
 
@@ -42,9 +42,9 @@ class Fsapp < Formula
   end
 
   def install
-    bin.install "fsapp" if OS.mac? && Hardware::CPU.arm?
-    bin.install "fsapp" if OS.mac? && Hardware::CPU.intel?
-    bin.install "fsapp" if OS.linux? && Hardware::CPU.intel?
+    bin.install "fsapp", "fset" if OS.mac? && Hardware::CPU.arm?
+    bin.install "fsapp", "fset" if OS.mac? && Hardware::CPU.intel?
+    bin.install "fsapp", "fset" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
