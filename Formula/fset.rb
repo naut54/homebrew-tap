@@ -1,20 +1,20 @@
 class Fset < Formula
   desc "Config CLI for reading/writing fsapp's shared JSON config file"
   homepage "https://github.com/naut54/fsapp"
-  version "0.1.0"
+  version "0.1.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/naut54/fsapp/releases/download/v0.1.0/fset-aarch64-apple-darwin.tar.xz"
-      sha256 "8bcf5aa042fb56579c5c1c6e1b5aaf80152684b72542436ab85da26b13983c78"
+      url "https://github.com/naut54/fsapp/releases/download/v0.1.1/fset-aarch64-apple-darwin.tar.xz"
+      sha256 "d6c0a4c9fcb1a3cba35b6e915ee28983de6c7a932a929d74d92a1c50a7f42f36"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/naut54/fsapp/releases/download/v0.1.0/fset-x86_64-apple-darwin.tar.xz"
-      sha256 "96bd72c5ae01f4d6e234d1e58db87376455e2fc2fe15f75e254cfc964e6eb5a0"
+      url "https://github.com/naut54/fsapp/releases/download/v0.1.1/fset-x86_64-apple-darwin.tar.xz"
+      sha256 "e1adef69479504c525f4b2389946cd18ba01a4836faf2c22bc7acb5f210554f9"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/naut54/fsapp/releases/download/v0.1.0/fset-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "8953cecb4590b5a952624e7b3420c86ec01bd54a47bd343d265a08e459f24d19"
+    url "https://github.com/naut54/fsapp/releases/download/v0.1.1/fset-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "64dcd410021f1be0419f46b792d48aeb966478b10e0d46380808f3c4ba8197b5"
   end
   license "MIT"
 
