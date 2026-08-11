@@ -1,20 +1,20 @@
 class Fsapp < Formula
   desc "Operational CLI (fsapp) and config CLI (fset) for copy/mv/sync/watch/compress, backed by file-engine"
   homepage "https://github.com/naut54/fsapp"
-  version "0.2.1"
+  version "0.3.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/naut54/fsapp/releases/download/v0.2.1/fsapp-aarch64-apple-darwin.tar.xz"
-      sha256 "20b731ea597ffa32ff8d1f5f05b111a45a095b83388ff55f3ab31e860a750b45"
+      url "https://github.com/naut54/fsapp/releases/download/v0.3.0/fsapp-aarch64-apple-darwin.tar.xz"
+      sha256 "b9f5748d97399f57f2da7ab010c0a68aee55806beed19d8201562734a2936bfe"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/naut54/fsapp/releases/download/v0.2.1/fsapp-x86_64-apple-darwin.tar.xz"
-      sha256 "7a1ba18019bf06e758b4c72f6be39096dc069f60b9af82f64198fd1eb5b12aca"
+      url "https://github.com/naut54/fsapp/releases/download/v0.3.0/fsapp-x86_64-apple-darwin.tar.xz"
+      sha256 "c071ffee6929c51fa2d34dd90b6b67acbfe828748912a53b1d63d00042a1678c"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/naut54/fsapp/releases/download/v0.2.1/fsapp-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "0d2e6542aaa4e2d72a6e15641d80ed7ba517d2362e27175a68ad7b0988b05000"
+    url "https://github.com/naut54/fsapp/releases/download/v0.3.0/fsapp-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "014b848e4f908f88909f4d03390b35852fb52edf250a93c0742255e7b2141666"
   end
   license "MIT"
 
@@ -42,9 +42,15 @@ class Fsapp < Formula
   end
 
   def install
-    bin.install "fsapp", "fset" if OS.mac? && Hardware::CPU.arm?
-    bin.install "fsapp", "fset" if OS.mac? && Hardware::CPU.intel?
-    bin.install "fsapp", "fset" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "fsapp", "fset"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "fsapp", "fset"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "fsapp", "fset"
+    end
 
     install_binary_aliases!
 
