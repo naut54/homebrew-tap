@@ -1,20 +1,20 @@
 class Fsapp < Formula
   desc "Operational CLI (fsapp) and config CLI (fset) for copy/mv/sync/watch/compress/analyze/remove, backed by file-engine"
   homepage "https://github.com/naut54/fsapp"
-  version "0.9.0"
+  version "0.10.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/naut54/fsapp/releases/download/v0.9.0/fsapp-aarch64-apple-darwin.tar.xz"
-      sha256 "ace4c320fef19bd4256d5bd66cb927368b89af4fd764f5bec9fc04fd66bd519e"
+      url "https://github.com/naut54/fsapp/releases/download/v0.10.0/fsapp-aarch64-apple-darwin.tar.xz"
+      sha256 "005ef5cebeae16f90a04a5e917530ee4a14e302fc82b5e9af2edd93a50bf638a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/naut54/fsapp/releases/download/v0.9.0/fsapp-x86_64-apple-darwin.tar.xz"
-      sha256 "158dc9087d3800c172e309b94902bc6adf86d05c4d4ce480c5ff12067b590213"
+      url "https://github.com/naut54/fsapp/releases/download/v0.10.0/fsapp-x86_64-apple-darwin.tar.xz"
+      sha256 "37ec370ced23aa0a9028459f6f8ca55c85f513e428d31559c51ae569817d6680"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/naut54/fsapp/releases/download/v0.9.0/fsapp-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "39e22508629b66c18673ca9f087369fd7d15dff428b19d3c8d9b00d997eb0a50"
+    url "https://github.com/naut54/fsapp/releases/download/v0.10.0/fsapp-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "a4657c6c2ad332094636aea9b62f8c9f1ab6e9ad0fc2add6767db0f17a214688"
   end
   license "MIT"
 
@@ -53,9 +53,6 @@ class Fsapp < Formula
     end
 
     install_binary_aliases!
-
-    generate_completions_from_executable(bin/"fsapp", "completions")
-    generate_completions_from_executable(bin/"fset", "completions")
 
     # Homebrew will automatically install these, so we don't need to do that
     doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
